@@ -1,0 +1,46 @@
+
+
+
+        <div class = "card card-rounded">
+            <div class="card-header display-flex justify-space-between align-center ">
+                <h4 class="p-2">{{ post.title }}</h4>
+                <div class="text-right pr-3" style="font-size: 0.8rem;">post by: {{ post.user.name }} 
+                    <br />
+                    {{format_date post.updatedAt }}
+                    <br />
+                    {{#if post.comments.length }}
+                        <a class="comment-href" href="/api/comment/made/{{ post.id }}">
+                            {{format_commentCount post.comments.length }}
+                        </a>
+                    {{else}}
+                        {{format_commentCount post.comments.length }}
+                    {{/if}}
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="pl-4 pb-2 pr-4">{{ post.post }}</div>
+            </div>
+        </div>
+
+
+
+        <div class = "card-banner card-rounded">
+            <div class="card-header display-flex justify-space-between align-center ">
+                <h2>Your Comment</h2>
+            </div>
+            <div class="col-12">
+                <form class="form" id="new-comment">
+                    <div class="form-group">
+                        <label for="post-comment">Comment</label>
+                        <textarea name="comment" form="new-comment" class="form-input" type="text" id="post-comment"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">+ comment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+<script src="/js/comment.js"></script>

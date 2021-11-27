@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-auto">
+
+        <div class = "card-banner card-rounded">
+            <div class="card-header display-flex justify-space-between align-center ">
+                <h2>Edit Post</h2>
+                <div class="text-right pr-3" style="font-size: 0.8rem;">
+                    <div>Post ID: {{post.id}}</div>
+                    <div>Last Updated: {{format_date post.updated_at}}</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <form class="form" id="update-post">
+                    <div class="form-group">
+                        <label for="post-title">Title </label>
+                        {{!-- There was a glitch here - returning to this render would not render all of {{post.title}} so
+                            I've changed input type to 'textarea' and it is working --}}
+                        <textarea class="form-input" type="text" id="post-title">{{post.title}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-content">Content</label>
+                        <textarea name="content" form="new-post" class="form-input" type="text" id="post-content">{{post.post}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-update" alt="update post" style="background-color:green; color: white;" type="submit">+ update post</button>
+                        <button class="btn-update" id="delete-post" alt="delete post" style="background-color:LightPink; color:red; font-weight:600" data-id="{{post.id}}" >- delete post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/update-post.js"></script>

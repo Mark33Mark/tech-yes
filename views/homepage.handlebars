@@ -1,0 +1,30 @@
+
+
+{{#each posts as |post|}}
+
+  <div class = "card card-rounded">
+      <div class="card-header display-flex justify-space-between align-center ">
+        <a href="/api/comment/{{ post.id }}">
+          <h4 class="p-2">{{ post.title }}</h4>
+        </a>
+        <div class="text-right pr-3" style="font-size: 0.8rem;">post by: {{ post.user.name }} 
+          <br />
+          {{format_date post.updated_at }}
+            <br />
+            {{#if post.comments.length }}
+                <a class="comment-href" href="/api/comment/made/{{ post.id }}">
+                    {{format_commentCount post.comments.length }}
+                </a>
+            {{else}}
+                {{format_commentCount post.comments.length }}
+            {{/if}}
+        </div>
+      </div>
+    
+      <div class="card-body">
+        <div class="pl-4 pb-2 pr-4">{{ post.post }}</div>
+      </div>
+
+  </div>
+
+{{/each}}

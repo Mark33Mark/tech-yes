@@ -1,0 +1,29 @@
+
+<div class="row">
+    <div class="col-auto display-block">
+
+        {{#each user.posts as |posts|}} 
+            <a href="/api/post/{{ posts.id }}">
+                <div class = "card-banner card-rounded">
+                    <div class="card-header display-flex justify-space-between align-center ">
+                    <h4 class="p-2">{{ posts.title }}</h4>
+                    <div class="text-right pr-3" style="font-size: 0.8rem;">{{format_date posts.updated_at }}</div>
+                    </div>
+                </div>
+            </a>
+        {{/each}}
+
+        <div>
+            <a href="api/post"><img src="../img/AddPost.png" alt="add post" width="80" height="90" class="add-post" /></a>
+        </div>
+
+    </div>
+    
+    <div class="col-auto">
+        <div  id="news-feed">
+            
+        </div>
+    </div>
+    
+</div>
+

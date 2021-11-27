@@ -1,0 +1,43 @@
+
+
+    <a href="../{{comments.[0].post_id}}">
+        <div class = "card card-rounded">
+            <div class="card-header display-flex justify-space-between align-center ">
+                <h4 class="p-2">{{ comments.[0].post.title }}</h4>
+                <span>
+                <div class="text-right pr-3" style="font-size: 0.8rem;">
+                    <br />
+                    {{format_date comments.[0].post.updated_at }}
+                </span>
+                </div>
+            </div>
+    </a>
+            <div class="card-body">
+                <div class="pl-4 pb-2 pr-4">{{ comments.[0].post.post }}</div>
+            </div>
+        </div>
+
+        
+    {{#each comments as |comment|}}
+        <div class = "card-comment card-rounded">
+            <div class="card-header display-flex justify-space-between align-center ">
+                <h5>Comment</h5>
+                <div class="text-right pr-3" style="font-size: 0.8rem;">
+                    <div style="font-weight: 600;">Comment by:
+                        <span style="font-weight: 100;"> {{comment.user.name}} </span>
+                    </div> 
+                    <br />
+                    <div style="font-weight: 600;">Made on:
+                        <span style="font-weight: 100;">{{format_date comment.updatedAt}} </span> 
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                {{comment.comment}}
+            </div>
+        </div>
+    {{/each}}
+
+        <div>
+            <a href="../{{comments.[0].post_id}}"><div style="text-align: center; font-size:2rem; color:black">Click to: ➕ comment</div></a>
+        </div>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Tech Yes | technology blog</title>
+  <link rel="shortcut icon" href="img/favicon.ico?ver=1.0" type="image/x-icon" />
+
+  <!--- basic page needs and meta to boost SEO
+  ================================================== -->
+  <meta charset="utf-8">
+  <meta name="description" content="Mark Watson - developer and creator in the digital realm - web and devices" />  
+  <meta name="author" content="Mark Watson" />
+  <meta name="KEYWORDS" content="front end web developer, front-end web developer, full stack developer, 
+                                  social media, graphic design, analysis, database, 
+                                  e-commerce, website, web design, web designer, grahic design  
+                                  ui designer, ux designer, ui, ux, 
+                                  curriculum vitae web developer, resume web developer" />
+
+  <!-- Open Graph data
+  ================================================== -->
+  <meta property="og:title" content="Mark Watson" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.watsonised.com/content/SVG_MarkWatson.svg" />
+  <meta property="og:image:width" content="150" />
+  <meta property="og:image:height" content="150" />
+  <meta property="og:site_name" content="Mark Watson web developer"/>
+  <meta property="og:description" content="Mark Watson is a creative and talented computer programmer and web developer." />
+  
+  <!-- CSS
+  ================================================== -->  
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<!-- ================================================ -->  
+
+<body>
+  <div class="flex-column justify-space-around">
+    <div class="navbar">
+      <header class="display-block justify-space-between align-center p-5 bg-dash">
+        <nav>
+          <div class="pb-3 text-dark" >
+            <a href="/" >home</a>
+            <span class="divider">|</span> 
+            <!-- Conditionally render login or logout links -->
+            {{#if logged_in}}
+            <a href="api/user/logout"><span id="log-out">logout</span></a>
+            {{else}}
+            <a href="/login">login</a>
+            {{/if}}
+          </div>
+        </nav>      
+        <h1 class="text-white">
+          <a href="/dashboard">Tech-yes Dashboard</a>
+          {{#if user.name}}
+          <h5 class="text-white">Hi there, {{ user.name }}</h5>
+          {{else}}
+          <h5 class="text-white"></h5>
+          {{/if}}
+        </h1>
+      </header>
+    </div>
+    <main class="container container-fluid mtop">
+      {{{ body }}}
+    </main>
+
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/news_api.js"></script>
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+</body>
+
+</html>
