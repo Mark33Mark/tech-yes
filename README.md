@@ -122,8 +122,8 @@ There are no particular call outs for this assignment, all code was used with re
 [x]  Application is deployed to Heroku.
 [x]  Application is live with URL: [https://tech-yes.herokuapp.com/](https://tech-yes.herokuapp.com/)  
 [x]  GitHub repository containing your application code: [https://github.com/Mark33Mark/tech-yes](https://github.com/Mark33Mark/tech-yes)  
-[x]  Application loads with no errors.
-[x]  User experience is intuitive and easy to navigate. The UI has a clean an polished style.  The application resembles the mock-up functionality provided in the homework instructions.
+[x]  Application loads with no errors.  
+[x]  User experience is intuitive and easy to navigate. The UI has a clean an polished style.  The application resembles the mock-up functionality provided in the homework instructions.  
 [x]  The GitHub repository contains all the application code.  
 [x]  Repository has a unique name; follows best practice for file structure; and naming conventions.  
 [x]  The application resembles the mock-up functionality provided in the assigment instructions.  
